@@ -4,11 +4,10 @@ import useLocalStorage from "./useLocalStorage";
 const Card = styled.div`
   display: grid;
   place-items: center;
-  border: 2px solid;
+  border-bottom: 2px solid;
   width: 90%;
   height: auto;
   padding: 20px;
-  margin: 0.5%;
   color: #f38024;
   background: white;
   &:hover {

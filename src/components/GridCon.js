@@ -4,6 +4,6 @@ const Grid = styled.div`
   place-items: center;
 `;
 const Container = styled(Grid)`
-  margin-top: 180px;
+  margin-top: 120px;
 `;
 export { Grid, Container };
