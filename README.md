@@ -1,2 +1,4 @@
 # Food-Ordering-App
-Created with CodeSandbox
+
+Site can be accessed using
+https://csb-ybig2.netlify.app/
