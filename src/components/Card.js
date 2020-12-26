@@ -4,15 +4,16 @@ import useLocalStorage from "./useLocalStorage";
 const Card = styled.div`
   display: grid;
   place-items: center;
-  border-bottom: 2px solid;
+  border-bottom: 2px grey solid;
   width: 90%;
   height: auto;
   padding: 20px;
-  color: #f38024;
+  color: grey;
   background: white;
   &:hover {
-    background: #f38024;
-    color: white;
+    border-bottom: 2px #f38024 solid;
+    background: whitesmoke;
+    color: #f38024;
   }
 `;
 const Flex = styled.div`
@@ -43,35 +44,29 @@ const Img = styled.img`
   width: 100px;
   margin: 2%;
   height: 100px;
-  border: 2px solid;
+  border: 2px lightgrey solid;
 `;
-const Green = styled.div`
+const Box = styled.div`
+  width: 15px;
+  height: 15px;
+  margin-right: 2%;
+`;
+const Color = styled.div`
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+`;
+const Green = styled(Color)`
   background: #007e00;
-  border-radius: 50%;
-  width: 15px;
-  height: 15px;
 `;
-const GBox = styled.div`
-  display: grid;
-  place-items: center;
+const GBox = styled(Box)`
   border: 2px #007e00 solid;
-  width: 16px;
-  height: 16px;
-  margin-right: 2%;
 `;
-const Red = styled.div`
+const Red = styled(Color)`
   background: #913f21;
-  border-radius: 50%;
-  width: 15px;
-  height: 15px;
 `;
-const RBox = styled.div`
-  display: grid;
-  place-items: center;
+const RBox = styled(Box)`
   border: 2px #913f21 solid;
-  width: 16px;
-  height: 16px;
-  margin-right: 2%;
 `;
 const ARButton = styled.button`
   border: 0;
@@ -95,7 +90,6 @@ const CustAv = styled.h5`
 `;
 export default function FromTheBarnyard(props) {
   var [count, setCount] = useLocalStorage(`${props.id}`, 0);
-  console.log(props.id);
   return (
     <Card>
       <Flex>

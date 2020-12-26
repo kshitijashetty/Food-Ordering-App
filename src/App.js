@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import useLocalStorage from "./components/useLocalStorage";
 import styled from "styled-components";
 import axios from "axios";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
@@ -44,11 +45,23 @@ const CoDiv = styled.div`
   top: -10px;
   left: -5px;
 `;
-
+const Heading = styled.div`
+  display: flex;
+  width: 90%;
+  justify-content: flex-start;
+  /* align-items: flex-start; */
+`;
+const Cart = styled.div`
+  display: flex;
+  width: 8%;
+  margin-right: 2%;
+  justify-content: flex-end;
+  /* align-items: flex-end; */
+`;
 export default function App() {
   var [data, setData] = useState([]);
   var [cat, setCat] = useState([]);
-  var [countC, setCountC] = useState(0);
+  var [countC, setCountC] = useLocalStorage("countC", 0);
 
   const updateCount = (ac, bool) => {
     return ac === "A"
@@ -80,8 +93,10 @@ export default function App() {
   return (
     <div className="App">
       <H1>
-        {data[0] ? data[0].restaurant_name : ""}
-        &#x1F6D2; <CoDiv>{countC}</CoDiv>
+        <Heading>{data[0] ? data[0].restaurant_name : ""}</Heading>
+        <Cart>
+          &#x1F6D2; <CoDiv>{countC}</CoDiv>
+        </Cart>
       </H1>
       <Router>
         <Flex>
